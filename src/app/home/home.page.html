@@ -1,14 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Timer Button
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+  <div *ngIf="flag; then start else stop"></div>
+
+  <ng-template #start>
+      <ion-button expand="block" color="success" (click)="onClick()">
+        START
+      </ion-button>
+  </ng-template>
+  <ng-template #stop>
+      <ion-button expand="block" color="danger">
+        STOP
+      </ion-button>
+  </ng-template>
+
+
+
 </ion-content>
